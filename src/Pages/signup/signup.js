@@ -1,6 +1,6 @@
 import React from "react";
 import './signup.css';
-import { Register } from '../../../src/Services/userService'
+import { Register } from '../../Services/userService'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Image from '../../image/img.jpg'
@@ -48,6 +48,7 @@ const SignUp = () => {
                     ...regexObj,
                     firstNameBorder: false
                 }));
+                console.log("11",regexObj)
                 sethelpertext(regexhelpertext => ({
                     ...regexhelpertext,
                     firstNameHelperText: ""
@@ -58,6 +59,7 @@ const SignUp = () => {
                     ...regexObj,
                     firstNameBorder: true
                 }));
+                console.log("123",regexObj)
                 sethelpertext(regexhelpertext => ({
                     ...regexhelpertext,
                     firstNameHelperText: "Enter the correct first name"
@@ -68,6 +70,7 @@ const SignUp = () => {
                     ...regexObj,
                     emailBorder: false
                 }));
+                console.log("1652",regexObj)
                 sethelpertext(regexhelpertext => ({
                     ...regexhelpertext,
                     emailHelperText: ""
@@ -78,6 +81,7 @@ const SignUp = () => {
                     ...regexObj,
                     emailBorder: true
                 }));
+                console.log("121",regexObj)
                 sethelpertext(regexhelpertext => ({
                     ...regexhelpertext,
                     emailHelperText: "Enter the corret email"
@@ -88,6 +92,7 @@ const SignUp = () => {
                     ...regexObj,
                     passwordBorder: false
                 }));
+                console.log("88",regexObj)
                 sethelpertext(regexhelpertext => ({
                     ...regexhelpertext,
                     passwordHelperText: ""
@@ -98,6 +103,7 @@ const SignUp = () => {
                     ...regexObj,
                     passwordBorder: true
                 }));
+                console.log("00",regexObj)
                 sethelpertext(regexhelpertext => ({
                     ...regexhelpertext,
                     passwordHelperText: "Enter the corret password"
@@ -108,6 +114,7 @@ const SignUp = () => {
                     ...regexObj,
                     lastNameBorder: false
                 }));
+                console.log("33",regexObj)
                 sethelpertext(regexhelpertext => ({
                     ...regexhelpertext,
                     lastNameHelperText: ""
@@ -118,6 +125,7 @@ const SignUp = () => {
                     ...regexObj,
                     lastNameBorder: true
                 }));
+                console.log("55",regexObj)
                 sethelpertext(regexhelpertext => ({
                     ...regexhelpertext,
                     lastNameHelperText: "Enter the corret lastname"
@@ -128,7 +136,8 @@ const SignUp = () => {
                     "firstName": firstName,
                     "lastName": lastName,
                     "email": email,
-                    "password": password
+                    "password": password,
+                    "service": "advance"
                 }
 
                 Register(obj).then((res) => {
