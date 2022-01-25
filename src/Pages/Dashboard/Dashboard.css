@@ -1,0 +1,9 @@
+.notesContainer{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 50%;
+    position: relative;
+    left: 500px;
+    top: 100px;
+}
