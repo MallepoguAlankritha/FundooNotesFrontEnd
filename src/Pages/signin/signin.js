@@ -4,10 +4,12 @@ import { login } from '../../Services/userService'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Image from '../../image/img.jpg';
+import { useHistory } from "react-router-dom";
 const emailRegex = /^[a-zA-z]{3}([+-_ .]*[a-zA-Z0-9]+)*[@][a-zA-z0-9]+(.[a-z]{2,3})*$/;
 const passRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
 
 function Signin() {
+    let history=useHistory()
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [regexobj, setregexobj] = React.useState({ emailborder: false, passwordborder: false })
@@ -18,7 +20,10 @@ function Signin() {
     const takePassword = (e) => {
         setPassword(e.target.value);
     }
-    const submit = () => {
+    function pushOne(){
+        history.push("/signup")
+    }
+    const submit = async() => {
         console.log(email,password);
         if (email === "" && password === "") {
             setregexobj({ ...regexobj, emailborder: true, passwordborder: true })
@@ -77,21 +82,39 @@ function Signin() {
                     "email": email,
                     "password": password
                 }
+                let response = await login(obj)
+               try{
+                if(!response){
+                    console.log(response)
+                }else if(response){
+                    console.log(response.data)
+                    localStorage.setItem("token",response.data.token)
+                    localStorage.setItem("id",response.data.id)
+                    history.push("/Dashboard")
+                }
+                    console.log(obj);
+               }
+               catch(error){
+                   console.log(error)
+               }   
+            }
 
-                login(obj).then((res) => {
-                    if (!res) {
-                        console.log(res);
-                    }
-                    console.log(res)
-                    console.log(res.data.data)
-                    localStorage.setItem("Token : ", res.data.data)
-                }).catch((err) => {
-                    console.log(err)
-                })
-                console.log(obj);
+                // login(obj).then((res) => {
+                //     if (!res) {
+                //         console.log(res);
+                //     }
+                //     console.log(res)
+                //     console.log(res.data.data)
+                //     // localStorage.setItem("Token",res.data.data)
+                //     // localStorage.setItem("id",res.data.data.id)
+                //     history.push("/Dashboard")
+                // }).catch((err) => {
+                //     console.log(err)
+                // })
+                // console.log(obj);
             }
         }
-    }
+    
     return (
         <div className="Container">
      <div className="image">

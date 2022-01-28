@@ -3,12 +3,16 @@ import '../Header/Header.css'
 import download from '../../image/googlekeepimg.jpg'
 // import view_headline from '@mui/material-icons/view_headline';
 
-function Header() {
+function Header(props) {
+  function onClicked()
+  {
+    props.listenToProps()
+  }
   return (
     <div>
       <div className="header">
      
-      <i className="material-icons">view_headline</i>
+      <i onClick={onClicked}className="material-icons" >view_headline</i>
         <div className="img">
         <img src={download} alt="Img" style={{ width: "34px" }} />
         </div>
