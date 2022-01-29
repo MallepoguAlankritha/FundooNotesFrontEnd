@@ -4,6 +4,7 @@ import {noteAdd} from '../../Services/dataService'
 function NoteTwo() {
     const [title, setTitle] = React.useState("")
     const [description, setDescription] = React.useState("")
+    const [isArchive,setIsArchive]=React.useState(false)
     const takeTitle = (event) => {
         setTitle(event.target.value)
     }
@@ -30,12 +31,18 @@ function NoteTwo() {
         noteAdd(obj).then((res) => {
             console.log(res)
             console.log(res.data.data)
-            localStorage.setItem("Token",res.data.data)
+            // localStorage.setItem("Token",res.data.data)
         }).catch((err) => {
             console.log(err)
         })
         console.log(obj);
     }
+    const setArchive=()=>{
+        setIsArchive(true)
+
+
+    }
+
 
     return (
         <div className="NotecontainerOne">
@@ -50,8 +57,8 @@ function NoteTwo() {
                     <i class="material-icons">notifications</i>
                     <i class="material-icons">person_add</i>
                     <i class="material-icons">palette</i>
-                    <i class="material-icons">photo</i>
-                    <i class="material-icons">vertical_align_bottom</i>
+                    <i class="material-icons">photo</i> 
+                 <i class="material-icons">arrow_downward</i>
                 </div>
                 <div className="CloseButton">
                     <button className="lastButton" onClick={noteAdded}>Close</button>

@@ -18,3 +18,10 @@ export function getNote()
     let response=axios.get("http://localhost:3000/getNote",config)
     return response;
 } 
+export function deleteNote(id)
+{
+    let a=id
+    console.log(config)
+    let response=axios.delete(`http://localhost:3000/deleteNote/${a}`,config)
+    return response;
+} 
