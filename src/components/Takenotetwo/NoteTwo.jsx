@@ -4,7 +4,7 @@ import {noteAdd} from '../../Services/dataService'
 function NoteTwo() {
     const [title, setTitle] = React.useState("")
     const [description, setDescription] = React.useState("")
-    const [isArchive,setIsArchive]=React.useState(false)
+   
     const takeTitle = (event) => {
         setTitle(event.target.value)
     }
@@ -12,14 +12,14 @@ function NoteTwo() {
         setDescription(event.target.value)
     }
     const noteAdded = () => {
-    //     const data= new FormData()
-    //     data.append('title',title)
-    //     data.append('description',description)
-    //     noteAdd(data).then((res) => {
-    //     console.log(res)
-    //     }).catch((error) =>{
-    //         console.log(error)
-    //     })
+        // const data= new FormData()
+        // data.append('title',title)
+        // data.append('description',description)
+        // noteAdd(data).then((res) => {
+        // console.log(res)
+        // }).catch((error) =>{
+        //     console.log(error)
+        // })
 
     // }
     
@@ -37,11 +37,7 @@ function NoteTwo() {
         })
         console.log(obj);
     }
-    const setArchive=()=>{
-        setIsArchive(true)
-
-
-    }
+   
 
 
     return (
@@ -50,7 +46,7 @@ function NoteTwo() {
                 <input type="text" placeholder="Title" className="Fields" onChange={takeTitle} />
             </div>
             <div className="NotecontainerThree">
-                <input type="text" placeholder="take a notes" className="Fields" onChange={Description} />
+                <input type="text" placeholder="Take a note...." className="Fields" onChange={Description} />
             </div>
             <div className="NotecontainerFour">
                 <div className='icons'>
@@ -59,6 +55,12 @@ function NoteTwo() {
                     <i class="material-icons">palette</i>
                     <i class="material-icons">photo</i> 
                  <i class="material-icons">arrow_downward</i>
+                 <i class="material-icons"> more_vert</i>
+                
+                 
+                 
+                 
+
                 </div>
                 <div className="CloseButton">
                     <button className="lastButton" onClick={noteAdded}>Close</button>

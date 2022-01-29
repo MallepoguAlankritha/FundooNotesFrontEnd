@@ -11,7 +11,7 @@
     
     height:100vh;
     width: 80vw;
-    border: 1px solid red;
+    
     position:relative;
     top:150px;
     left: 200px;
@@ -27,4 +27,20 @@
     border-radius: 10px;
     
 
+}
+.Title{
+   
+
+
+}
+.Description{
+   
+    margin-top: 20px;
+}
+.iconHolder{
+   
+    margin-top:40px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

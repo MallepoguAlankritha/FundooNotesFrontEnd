@@ -58,8 +58,8 @@ function Dashboard() {
                                     <div className="descriptiondiv">
                                    <input type="text" className="inputDescription" placeholder={props.note.description}/>
                                        </div> */}
-                                    <li>{note.title}</li>
-                                    <li>{note.description}</li>
+                                    <div className='Title'>{note.title}</div>
+                                    <div className='Description'>{note.description}</div>
                                 </div>
                             }
                             <div className="containerNoteFour">
@@ -68,7 +68,7 @@ function Dashboard() {
                                     <i class="material-icons">group_add</i>
                                     <i class="material-icons">mms</i>
                                     <i class="material-icons">palette</i>
-                                    <i class="material-icons" onClick={deleteNoteOne}id={note._id}>arrow_downward</i>
+                                    <i class="material-icons" onClick={deleteNoteOne}id={note._id}>delete</i>
                                 </div>
                                 </div>
                             </div>
