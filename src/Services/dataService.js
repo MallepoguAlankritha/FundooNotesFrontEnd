@@ -25,3 +25,10 @@ export function deleteNote(id)
     let response=axios.delete(`http://localhost:3000/deleteNote/${a}`,config)
     return response;
 } 
+export function updateNote(obj,id)
+{
+    let a=id
+    console.log(config)
+    let response=axios.put(`http://localhost:3000/updateNote/${a}`,obj,config)
+    return response;
+} 

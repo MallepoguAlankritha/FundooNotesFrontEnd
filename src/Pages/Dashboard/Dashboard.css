@@ -18,6 +18,45 @@
     display:flex;
     flex-wrap: wrap;
 }
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+    background-color: rgba(0, 0, 0, 0.1)!important;
+}
+.updateTitle {
+    height: 80%;
+    width: 100%;
+    margin-top: 40px;
+    
+  }
+.updateDescription {
+    margin-top: 20px;
+    height: 90%;
+    width: 100%;
+
+  }
+  .close {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .close1 {
+    outline: none;
+    border: none;
+    font-size: 20px;
+    background: transparent;
+    cursor: pointer;
+  }
+  .close1:hover {
+    border-radius: 5px;
+    background: rgba(190, 189, 189, 0.295);
+  }
+
+.abc {
+    width : 500px;
+    height : 200px;
+    background-color: reds;
+}
 .note-box{
     width: 240px;
     height: 150px;

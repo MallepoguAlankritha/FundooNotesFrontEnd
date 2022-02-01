@@ -1,7 +1,7 @@
 import React from 'react'
 import './NoteTwo.css'
 import {noteAdd} from '../../Services/dataService'
-function NoteTwo() {
+function NoteTwo(props) {
     const [title, setTitle] = React.useState("")
     const [description, setDescription] = React.useState("")
    
@@ -31,6 +31,7 @@ function NoteTwo() {
         noteAdd(obj).then((res) => {
             console.log(res)
             console.log(res.data.data)
+          props.listenToNoteTwo()  
             // localStorage.setItem("Token",res.data.data)
         }).catch((err) => {
             console.log(err)
